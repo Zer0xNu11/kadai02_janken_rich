@@ -16,7 +16,7 @@ let scoreTime = 0;
 const maxTime = 1000;
 $("#timer").html(maxTime); 
 let setTotalHands = 20;
-let debug = 1;
+let debug = 0;
 let debugScore = 24000;
 // -----------------------------------------
 
