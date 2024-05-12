@@ -17,7 +17,7 @@ const maxTime = 1000;
 $("#timer").html(maxTime); 
 let setTotalHands = 20;
 let debug = 0;
-let debugScore = 24000;
+let debugScore = 28000;
 // -----------------------------------------
 
 let isPlaying = -1; //-1-selectDifficulty 0-beforestart 1-playing 2-finished
@@ -494,6 +494,9 @@ $(`#imgBox`).on('click', ()=>{
     $('#smile1').attr('src', '../img/glass.png');
     $('#star').attr('src', '../img/star-green.svg'); 
     $(`#mainBoard`).addClass(`cursor-[url(../img/10.svg),_pointer]`);
+
+    resetHandBtn();
+    allHandBtn();
     audio('secret');
     return; 
   }
@@ -553,6 +556,44 @@ $('#mainBoard').contextmenu(()=>{
     console.log(cursor);
   }
 });
+
+// handBtn
+$('#gu-btn').on('click',()=>{
+  if(angelMode != 3){
+      resetHandBtn();
+      $('#gu-btn').addClass('border-[12px]');
+      cursor = 1;
+      console.log(cursor);
+    }
+  });
+$('#choki-btn').on('click',()=>{
+  if(angelMode != 3){
+      resetHandBtn();
+      $('#choki-btn').addClass('border-[12px]');
+      cursor = 2;
+      console.log(cursor);
+    }
+  });
+$('#pa-btn').on('click',()=>{
+  if(angelMode != 3){
+      resetHandBtn();
+      $('#pa-btn').addClass('border-[12px]');
+      cursor = 5;
+      console.log(cursor);
+    }
+  });
+
+  function resetHandBtn(){
+    $('#gu-btn').removeClass('border-[12px]');
+    $('#choki-btn').removeClass('border-[12px]');
+    $('#pa-btn').removeClass('border-[12px]');
+  }
+
+  function allHandBtn(){
+    $('#gu-btn').addClass('border-[12px]');
+    $('#choki-btn').addClass('border-[12px]');
+    $('#pa-btn').addClass('border-[12px]');}
+    
 
 
 }
