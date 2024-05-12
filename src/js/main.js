@@ -16,7 +16,7 @@ let scoreTime = 0;
 const maxTime = 1000;
 $("#timer").html(maxTime); 
 let setTotalHands = 20;
-let debug = 1;
+let debug = 0;
 let debugScore = 50000;
 // -----------------------------------------
 
@@ -82,6 +82,7 @@ let score = {
      {
        this.calchands();
        this.turnTileOpen();
+       audio('open');
       }
     }
     
@@ -189,9 +190,9 @@ let score = {
       let judge = this.hand - cursor;
       // console.log(judge);
       if(angelMode === 3){score.win ++; return;}
-      if(judge === 0){score.draw +=1; emotionReset();   $(`#smile2`).removeClass('hidden');}
-      else if([3,1,-4].includes(judge)){score.win ++; emotionReset();   $(`#smile1`).removeClass('hidden');}
-      else if([-3,-1,4].includes(judge)){score.lose ++;  emotionReset();  $(`#smile3`).removeClass('hidden');}
+      if(judge === 0){score.draw +=1; emotionReset();   $(`#smile2`).removeClass('hidden'); audio('draw');}
+      else if([3,1,-4].includes(judge)){score.win ++; emotionReset();   $(`#smile1`).removeClass('hidden'); audio('win');}
+      else if([-3,-1,4].includes(judge)){score.lose ++;  emotionReset();  $(`#smile3`).removeClass('hidden'); audio('lose');}
     }
    }
 
@@ -281,9 +282,17 @@ function startGame(){
   isPlaying = 1;
 }
 
+// 効果音
+function audio(e){
+  const openSound = new Audio(`../sound/${e}.mp3`);
+  openSound.play();
+}
+
+
 function finishGame(){
   isPlaying = 2;
   calcScore();
+  audio('gameClear');
   $("#scorePoint").html(scorePoint);
   for(let i=0; i<100; i++){
       tiles[i].open();
@@ -347,6 +356,7 @@ $(`#hard`).on('click', ()=>{
 $(`#result`).on('click', ()=>{
   $(`#result`).addClass('hidden');
   $(`#resultMessage`).removeClass('hidden');
+  audio('open');
   if(scorePoint <= -40000){
     $('#smile0').attr('src', '../img/akuma.jpg');
     $(`#rank`).html('Rank-1 悪魔');
@@ -425,6 +435,7 @@ $(`#result`).on('click', ()=>{
 $(`#help`).on('click', ()=>{
   $(`#helpWindow`).addClass('flex');
   $(`#helpWindow`).removeClass('hidden');
+  audio('open');
 });
 
 $(`#closeHelp`).on('click', ()=>{
@@ -445,6 +456,7 @@ $(`#imgBox`).on('click', ()=>{
     $('#smile1').attr('src', '../img/glass.png');
     $('#star').attr('src', '../img/star-green.svg'); 
     $(`#mainBoard`).addClass(`cursor-[url(../img/10.svg),_pointer]`);
+    audio('secret');
     return; 
   }
   if(angelMode != 3){angelMode = 0;}
@@ -464,6 +476,7 @@ $(`#imgBox`).on('click', ()=>{
     $('#smile1').attr('src', '../img/akuma.jpg');
     $("#hell").html('hell');
     setHell();
+    audio('hell');
   }
  }
 

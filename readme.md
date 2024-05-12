@@ -1,5 +1,5 @@
 # ①課題番号-プロダクト名
-kadai01_janken
+kadai02_janken_rich
 マイン　グチョキパー
 
 ## ②課題内容（どんな作品か）
