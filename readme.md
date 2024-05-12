@@ -19,7 +19,7 @@ kadai02_janken_rich
 
 更新箇所
 - 効果音の追加
-- 
+- X(旧twitter)への投稿機能追加
 - 
 
 

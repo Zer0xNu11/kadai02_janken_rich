@@ -1203,6 +1203,18 @@ input:checked + .toggle-bg{
   top: 0.5rem;
 }
 
+.-left-10{
+  left: -2.5rem;
+}
+
+.-left-11{
+  left: -2.75rem;
+}
+
+.top-1{
+  top: 0.25rem;
+}
+
 .z-10{
   z-index: 10;
 }
@@ -1321,6 +1333,14 @@ input:checked + .toggle-bg{
 
 .mt-6{
   margin-top: 1.5rem;
+}
+
+.ml-1{
+  margin-left: 0.25rem;
+}
+
+.mt-1{
+  margin-top: 0.25rem;
 }
 
 .block{
@@ -1491,6 +1511,18 @@ input:checked + .toggle-bg{
   width: 100%;
 }
 
+.w-1{
+  width: 0.25rem;
+}
+
+.w-9{
+  width: 2.25rem;
+}
+
+.w-4\/5{
+  width: 80%;
+}
+
 .flex-1{
   flex: 1 1 0%;
 }
@@ -1651,6 +1683,10 @@ input:checked + .toggle-bg{
 
 .justify-between{
   justify-content: space-between;
+}
+
+.justify-around{
+  justify-content: space-around;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]){
@@ -1857,6 +1893,16 @@ input:checked + .toggle-bg{
   background-color: rgb(250 202 21 / var(--tw-bg-opacity));
 }
 
+.bg-orange-300{
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 186 140 / var(--tw-bg-opacity));
+}
+
+.bg-gray-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
+
 .bg-\[url\(\'\.\.\/img\/\$\{this\.hand\}\.svg\'\)\]{
   background-image: url('../img/${this.hand}.svg');
 }
@@ -1947,6 +1993,10 @@ input:checked + .toggle-bg{
 
 .pt-2{
   padding-top: 0.5rem;
+}
+
+.pl-1{
+  padding-left: 0.25rem;
 }
 
 .text-center{

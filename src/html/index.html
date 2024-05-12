@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<main id="playWindow">
 <section class="flex">
   <!-- InfoBoard -->
   <div class="grid grid-cols-4 text-center grid-rows-2 w-[300px] font-Dosis px-2 font-bold">
@@ -56,7 +57,7 @@
     </div>
   </div>
  <!-- scoreboard  -->
-  <div class="flex flex-col bg-blue-400 w-[300px] border-4 border-sky-800 items-center shadow-black/80 shadow-md">
+  <div id="scoreBoardImg" class="flex flex-col bg-blue-400 w-[300px] border-4 border-sky-800 items-center shadow-black/80 shadow-md">
     <div id="imgBox" class="bg-gray-400 border-8 border-gray-500 rounded-xl w-[200px] h-[200px] mx-auto mt-10">
       <img id="smile0"  src="../img/glass.png" alt="faceGlass" class="hidden h-full w-full">
       <img id="smile1" src="../img/kachi.png" alt="faceKachi" class="">
@@ -65,10 +66,13 @@
     </div>
     <div id="scoreBoard" class="bg-gray-700 border-4 border-gray-400  text-center rounded-xl  shadow-black/80 shadow-md text-white w-[200px] h-[50px] m-4 text-4xl font-Dosis flex relative">
       <img id="star" src="../img/star-fill.svg" alt="" class="pl-4">
-      <div id="scorePoint" class="mx-auto">0000</div>
-      <button class="bg-black w-8 h-8 absolute -right-10 top-2"><a 
-        href="https://twitter.com/intent/tweet?text=マイングチョキパーをクリア!!%0aRank%2012%0aScore%2010000%0a&url=https://zer0xnu11.github.io/kadai02_janken_rich/src/html/&hashtags=マイングチョキパー" target="_blank">
-      <img src="../img/xlogo.svg" alt="" class="p-1"></a></button>
+      <div id="scorePoint" class="mx-auto"></div>
+      <button id="xIcon" class="bg-black w-8 h-8 absolute -right-10 top-1 hidden">
+      </button>
+      <button id="btnss" class="bg-white w-9 h-9 absolute -left-11 top-1 rounded-lg hidden">
+        <img src="../img/camera.svg" alt="screenshot-logo" class="mx-auto">
+        <!-- <a id="screenShot"  href=""></a> -->
+      </button>
     </div>
 
     <div>
@@ -88,6 +92,8 @@
 
   </div>
  </section>
+
+</main>
 
 <section>
   <div id="helpWindow" class="absolute top-10 left-10 w-[700px] h-[450px] bg-gray-500 border-4 border-black  rounded-xl  flex-col font-Dot text-white hidden">
@@ -142,6 +148,7 @@
 
   <script src="../js/jquery-3.7.1.min.js"></script>
   <script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>

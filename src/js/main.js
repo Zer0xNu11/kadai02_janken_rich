@@ -16,8 +16,8 @@ let scoreTime = 0;
 const maxTime = 1000;
 $("#timer").html(maxTime); 
 let setTotalHands = 20;
-let debug = 0;
-let debugScore = 50000;
+let debug = 1;
+let debugScore = 24000;
 // -----------------------------------------
 
 let isPlaying = -1; //-1-selectDifficulty 0-beforestart 1-playing 2-finished
@@ -350,86 +350,124 @@ $(`#hard`).on('click', ()=>{
 });
 
 
-
-
 //結果画面
+let rank = "";
+
 $(`#result`).on('click', ()=>{
   $(`#result`).addClass('hidden');
   $(`#resultMessage`).removeClass('hidden');
+
   audio('open');
   if(scorePoint <= -40000){
+    rank = '-1 悪魔'
     $('#smile0').attr('src', '../img/akuma.jpg');
     $(`#rank`).html('Rank-1 悪魔');
     $(`#comment`).html('どうやらあなたはよほどのもの好きのようですね。すでに地獄には行かれましたでしょうか？まだでしたらスマイルくんを最初に66回殴りましょう。もちろんグーで。')
   }
   else if(scorePoint <-10000){
+      rank = '0 ブラックホール'
       $('#smile0').attr('src', '../img/blackhole.jpg');
       $(`#rank`).html('Rank0 ブラックホール');
       $(`#comment`).html('狙った？逆にすごい得点です。よほど運が悪いか、hardモードを適当にやりすぎたか。そんなあなたに秘密をお教えします。スマイルくんをパーチョキグーの順番で触ってみましょう。');
   }
   else if(scorePoint <5000){
+    rank = '1 ミジンコ'
       $('#smile0').attr('src', '../img/mizinko.jpg');
       $(`#rank`).html('Rank1 ミジンコ');
       $(`#comment`).html('クリアおめでとうございます。可愛らしい戦績ですが、何事もまずはやり遂げることが大事ですからね。得点は時間よりも勝敗を気にしたほうが伸びると思います。');
   }
   else if(scorePoint <10000){
+    rank = '2 ペットボトルのキャップ'
       $('#smile0').attr('src', '../img/petcap.jpg');
       $(`#rank`).html('Rank2 ペットボトルのキャップ');
       $(`#comment`).html('ペットボトルのキャップって上の方に切れ込みが入っている事があるのですが、ご存知でしたか？製造工程で呑み口部分を洗浄する水が通るためのものらしいですよ。面白いですね。');
   }
   else if(scorePoint <12000){
+    rank = '3 みかん'
       $('#smile0').attr('src', '../img/mikan.jpg');
       $(`#rank`).html('Rank3 みかん');
       $(`#comment`).html('お正月の鏡餅の上に乗ってるのあるじゃないですか。あれ、実はみかんじゃないんですよ。いや、ミカンはミカンなんですが、ただのみかんではなくて、橙という果物らしいです。');
   }
   else if(scorePoint <14000){
+    rank = '4 消火器'
       $('#smile0').attr('src', '../img/shokaki.jpg');
       $(`#rank`).html('Rank4 消火器');
       $(`#comment`).html('赤色が目立つ消火器ですが、法的には25%以上赤ければいいので、デザイン性を重視した消火器なんかもあります。また、家庭用は25%以下でもいいので結構自由なデザインにできます。');
   }
   else if(scorePoint <16000){
+    rank = '5 信号機'
       $('#smile0').attr('src', '../img/shingoki.jpg');
       $(`#rank`).html('Rank5 信号機');
       $(`#comment`).html('信号機は故障するとグーとチョキに点滅するように設計されています。パーを表示すると事故の原因になるからですね。ん、なにか変ですか？');
   }
   else if(scorePoint <18000){
+    rank = '6 ライオン'
       $('#smile0').attr('src', '../img/raion.jpg');
       $(`#rank`).html('Rank6 ライオン');
       $(`#comment`).html('かなりの高みに来ましたね。もしまだeasyでしたら難易度を上げたほうが得点が伸びやすいです。また、得点は負けたときが最も被害甚大です。最悪あいこを狙うのも立派な戦法ですよ。');
   }
   else if(scorePoint <20000){
+    rank = '7 シールドマシーン'
       $('#smile0').attr('src', '../img/shieldMachien.jpg');
       $(`#rank`).html('Rank7 シールドマシーン');
       $(`#comment`).html('ご存知ですか、シールドマシーン。トンネルを作るための装置で、サイズと見た目がゲームのボスみたいに強そうです。知らない方はぜひ調べてみてくださいね。');
   }
   else if(scorePoint <23000){
+    rank = '8 F22 Raptor'
       $('#smile0').attr('src', '../img/raptor.jpg');
       $(`#rank`).html('Rank8 F22 Raptor');
       $(`#comment`).html('ついにこの高みに到達しましたね。もうアドバイスできることは何もありません。ステルス戦闘機F22、愛称のRaptorは猛禽類を意味するらしいです。');
   }
   else if(scorePoint <27000){
+    rank = '9 メテオ'
       $('#smile0').attr('src', '../img/inseki.jpg');
       $(`#rank`).html('Rank9 メテオ');
       $(`#comment`).html('もしメテオレベルのグーだったらチョキだけでなく、普通のグーとパーは吹き飛ばせてしまいますね。このゲームにそんな"グー"はありませんが。');
   }
   else if(scorePoint <30000){
+    rank = '10 太陽'
       $('#smile0').attr('src', '../img/taiyo.jpg');
       $(`#rank`).html('Rank10 太陽');
       $(`#comment`).html('素晴らしいじゃんけん力です。あなたのゲームへの情熱は灼熱の太陽にも勝ります。このゲームの得点は開いたタイルの枚数で少し加算されます。さらなる高みへ。');
   }
   else if(scorePoint <35000){
+    rank = '11 宇宙'
       $('#smile0').attr('src', '../img/utyu.jpg');
       $(`#rank`).html('Rank11 宇宙');
       $(`#comment`).html('宇宙です。星の煌めきが黄色であるなら、あなたを称えるにふさわしい賛辞は宇宙にもみつかりません。おめでとうございます。もしまだ余力があるなら、最低得点も目指してみては。');
   }
   else{
+    rank = 'null'
       $('#smile0').attr('src', '../img/nul.png');
       $(`#rank`).html('Rank null');
       if(angelMode != 3 & hellMode <66){$(`#comment`).html('この画面を見ている人がいるとは信じられません。人の手で到達できるとは。本当におめでとうございます！');}
       else {$(`#comment`).html('undefined 125 error');}
   }
+
+
+  let aResult = `<a href="https://twitter.com/intent/tweet?text=マイングチョキパーをクリア!!%0aRank%20${rank}%0aScore%20${scorePoint}%0a&hashtags=マイングチョキパー&url=https://zer0xnu11.github.io/kadai02_janken_rich/src/html/" target="_blank"><img src="../img/xlogo.svg" alt="x-logo" class="p-1"></a>`
+  // const aXIcon = document.createElement("a");
+  // aXIcon.href = 'aaaaa'; 
+  $('#xIcon').append(`${aResult}`);
+  $('#xIcon').removeClass('hidden');
+  $('#xIcon').removeClass('hidden');
+  $('#btnss').removeClass('hidden');
+
+  
 });
 
+//スクリーンショット
+
+$("#btnss").on('click',()=>{
+  html2canvas(document.getElementById("scoreBoardImg"),{
+    onrendered: function(canvas){
+      const aEl = document.createElement("a");
+      aEl.href = canvas.toDataURL("image/png"); 
+      aEl.download = "mineGuChokiPa.png";
+      aEl.click();
+    }
+  });
+});
 
 //操作説明
 $(`#help`).on('click', ()=>{
@@ -515,8 +553,6 @@ $('#mainBoard').contextmenu(()=>{
     console.log(cursor);
   }
 });
-
-
 
 
 }
