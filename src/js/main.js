@@ -334,18 +334,21 @@ $(`#easy`).on('click', ()=>{
   setTotalHands = 20;
   isPlaying = 0;
   $(`#difficulty`).addClass('hidden');
+  audio('click');
   prepareTile();
 });
 $(`#normal`).on('click', ()=>{
   setTotalHands = 35;
   isPlaying = 0;
   $(`#difficulty`).addClass('hidden');
+  audio('click');
   prepareTile();
 });
 $(`#hard`).on('click', ()=>{
   setTotalHands = 50;
   isPlaying = 0;
   $(`#difficulty`).addClass('hidden');
+  audio('click');
   prepareTile();
 });
 
@@ -540,12 +543,15 @@ $('#mainBoard').contextmenu(()=>{
   if(angelMode != 3){
     $(`#mainBoard`).removeClass(`cursor-[url(../img/${cursor}.svg),_pointer]`);
     if(cursor === 1){
+      audio('click');
       cursor = 2;
     }
     else if(cursor === 2){
+      audio('click');
       cursor = 5;
     }
     else if(cursor === 5){
+      audio('click');
       cursor = 1;
     }
     else{
@@ -564,6 +570,7 @@ $('#gu-btn').on('click',()=>{
       $('#gu-btn').addClass('border-[12px]');
       cursor = 1;
       console.log(cursor);
+      audio('click');
     }
   });
 $('#choki-btn').on('click',()=>{
@@ -572,6 +579,7 @@ $('#choki-btn').on('click',()=>{
       $('#choki-btn').addClass('border-[12px]');
       cursor = 2;
       console.log(cursor);
+      audio('click');
     }
   });
 $('#pa-btn').on('click',()=>{
@@ -580,6 +588,7 @@ $('#pa-btn').on('click',()=>{
       $('#pa-btn').addClass('border-[12px]');
       cursor = 5;
       console.log(cursor);
+      audio('click');
     }
   });
 
