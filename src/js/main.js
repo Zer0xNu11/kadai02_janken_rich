@@ -11,7 +11,6 @@ let handCounter = {
 let openedHand = 0;
 let scorePoint = 0;
 let scoreTime = 0;
-let mobile = 0;
 
 //Config---------------------------------
 const maxTime = 1000;
@@ -498,9 +497,9 @@ $(`#imgBox`).on('click', ()=>{
     $('#smile1').attr('src', '../img/glass.png');
     $('#star').attr('src', '../img/star-green.svg'); 
     $(`#mainBoard`).addClass(`cursor-[url(../img/10.svg),_pointer]`);
-
-    resetHandBtn();
-    allHandBtn();
+    console.log(angelMode);
+    // resetHandBtn();
+    // allHandBtn();
     audio('secret');
     return; 
   }
@@ -593,16 +592,16 @@ $('#mainBoard').contextmenu(()=>{
 //     }
 //   });
 
-//   function resetHandBtn(){
-//     $('#gu-btn').removeClass('border-[12px]');
-//     $('#choki-btn').removeClass('border-[12px]');
-//     $('#pa-btn').removeClass('border-[12px]');
-//   }
+  // function resetHandBtn(){
+  //   $('#gu-btn').removeClass('border-[12px]');
+  //   $('#choki-btn').removeClass('border-[12px]');
+  //   $('#pa-btn').removeClass('border-[12px]');
+  // }
 
-//   function allHandBtn(){
-//     $('#gu-btn').addClass('border-[12px]');
-//     $('#choki-btn').addClass('border-[12px]');
-//     $('#pa-btn').addClass('border-[12px]');}
+  // function allHandBtn(){
+  //   $('#gu-btn').addClass('border-[12px]');
+  //   $('#choki-btn').addClass('border-[12px]');
+  //   $('#pa-btn').addClass('border-[12px]');}
     
 
 
