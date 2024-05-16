@@ -1,5 +1,6 @@
 'use strict'
 {
+console.log('mobile');
 let hands = [];
 let tiles = [];
 let handCounter = {
@@ -540,70 +541,72 @@ $(`#hell`).on('click', ()=>{
 
 
 // マウスカーソル
-$('#mainBoard').contextmenu(()=>{
-  if(angelMode != 3){
-    $(`#mainBoard`).removeClass(`cursor-[url(../img/${cursor}.svg),_pointer]`);
-    if(cursor === 1){
-      audio('click');
-      cursor = 2;
-    }
-    else if(cursor === 2){
-      audio('click');
-      cursor = 5;
-    }
-    else if(cursor === 5){
-      audio('click');
-      cursor = 1;
-    }
-    else{
-      return;
-    }
+// $('#mainBoard').contextmenu(()=>{
+//   if(angelMode != 3){
+//     $(`#mainBoard`).removeClass(`cursor-[url(../img/${cursor}.svg),_pointer]`);
+//     if(cursor === 1){
+//       audio('click');
+//       cursor = 2;
+//     }
+//     else if(cursor === 2){
+//       audio('click');
+//       cursor = 5;
+//     }
+//     else if(cursor === 5){
+//       audio('click');
+//       cursor = 1;
+//     }
+//     else{
+//       return;
+//     }
     
-    $(`#mainBoard`).addClass(`cursor-[url(../img/${cursor}.svg),_pointer]`);
-    console.log(cursor);
-  }
-});
+//     $(`#mainBoard`).addClass(`cursor-[url(../img/${cursor}.svg),_pointer]`);
+//     console.log(cursor);
+//   }
+// });
 
 // handBtn
-// $('#gu-btn').on('click',()=>{
-//   if(angelMode != 3){
-//       resetHandBtn();
-//       $('#gu-btn').addClass('border-[12px]');
-//       cursor = 1;
-//       console.log(cursor);
-//       audio('click');
-//     }
-//   });
-// $('#choki-btn').on('click',()=>{
-//   if(angelMode != 3){
-//       resetHandBtn();
-//       $('#choki-btn').addClass('border-[12px]');
-//       cursor = 2;
-//       console.log(cursor);
-//       audio('click');
-//     }
-//   });
-// $('#pa-btn').on('click',()=>{
-//   if(angelMode != 3){
-//       resetHandBtn();
-//       $('#pa-btn').addClass('border-[12px]');
-//       cursor = 5;
-//       console.log(cursor);
-//       audio('click');
-//     }
-//   });
+$('#gu-btn').on('click',()=>{
+  if(angelMode != 3){
+      resetHandBtn();
+      $('#gu-btn').addClass('border-[12px]');
+      cursor = 1;
+      console.log(cursor);
+      audio('click');
+    }
+  });
+$('#choki-btn').on('click',()=>{
+  if(angelMode != 3){
+      resetHandBtn();
+      $('#choki-btn').addClass('border-[12px]');
+      cursor = 2;
+      console.log(cursor);
+      audio('click');
+    }
+  });
+$('#pa-btn').on('click',()=>{
+  if(angelMode != 3){
+      resetHandBtn();
+      $('#pa-btn').addClass('border-[12px]');
+      cursor = 5;
+      console.log(cursor);
+      audio('click');
+    }
+  });
 
-//   function resetHandBtn(){
-//     $('#gu-btn').removeClass('border-[12px]');
-//     $('#choki-btn').removeClass('border-[12px]');
-//     $('#pa-btn').removeClass('border-[12px]');
-//   }
+  function resetHandBtn(){
+    $('#gu-btn').removeClass('border-[12px]');
+    $('#choki-btn').removeClass('border-[12px]');
+    $('#pa-btn').removeClass('border-[12px]');
+  }
 
-//   function allHandBtn(){
-//     $('#gu-btn').addClass('border-[12px]');
-//     $('#choki-btn').addClass('border-[12px]');
-//     $('#pa-btn').addClass('border-[12px]');}
+  function allHandBtn(){
+    $('#gu-btn').addClass('border-[12px]');
+    $('#choki-btn').addClass('border-[12px]');
+    $('#pa-btn').addClass('border-[12px]');}
     
-
+    document.oncontextmenu = () => {
+      return false;
+    }
 
 }
