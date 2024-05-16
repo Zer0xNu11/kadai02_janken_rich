@@ -12,7 +12,6 @@ let handCounter = {
 let openedHand = 0;
 let scorePoint = 0;
 let scoreTime = 0;
-let mobile = 0;
 
 //Config---------------------------------
 const maxTime = 1000;
@@ -508,6 +507,20 @@ $(`#imgBox`).on('click', ()=>{
   if(angelMode != 3){angelMode = 0;}
  }
 });
+
+let debugStar = 0;
+  $('#star').on('click', ()=>{
+    if(debugStar > 10){
+      debug =1;
+      debugScore +=2000;
+      audio('secret');
+    }
+    if(cursor === 10){
+      debugStar++;
+      if(debugStar ===10){debugScore = 0;}
+    }
+  }); 
+
 
 
 let hellMode = 0;

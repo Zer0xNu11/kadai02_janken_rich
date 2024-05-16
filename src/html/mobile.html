@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
   <title>マイングチョキパー</title>
+  <style>
+    html {
+  touch-action: manipulation;
+}
+  </style>
 </head>
 <body>
 
@@ -38,7 +43,7 @@
 
 
  <!-- mainboard  -->
- <section id="mainBoard" onContextmenu="return false;" class="cursor-[url(../img/1.svg),_pointer] w-full flex flex-col">
+ <section id="mainBoard" onContextmenu="return false;" class="w-full flex flex-col">
   <div class="bg-gray-200 w-[480px] h-[480px] rounded-xl  shadow-black/80 shadow-md relative">
     <img src="" alt="">
     <div id="buttonBox" class="grid grid-cols-10 grid-rows-10 w-[440px] h-[440px]
@@ -107,7 +112,7 @@
         hover:opacity-70 hover:cursor-pointer transition bg-green-400
         active:translate-y-1 active:shadow-none active:opacity-40
         text-white select-none m-8 py-2 px-6 text-3xl font-Dosis hidden">Result</button>
-        <div id="resultMessage" class="bg-blue-800 w-[280px] h-[160px] border-2 rounded text-white text-wrap font-Dot hidden"> 
+        <div id="resultMessage" class="bg-blue-800 w-[280px] h-[180px] border-2 rounded text-white text-wrap font-Dot hidden"> 
           <div id="rank"></div>
           <div id="comment"></div>
       </div>
@@ -129,11 +134,11 @@
     <br>
     <div class="ml-2">10x10のマスの中にグーチョキパーが埋まっています。</div>
     <br>
-    <div class="ml-2">マスをクリックすると数字が出てきます。</div>
+    <div class="ml-2">マスをタップすると数字が出てきます。</div>
     <div class="ml-2">その数字はそのマス以外の周囲8マスに含まれているグーチョキパーの数を表しています。</div>
     <br>
-    <div class="ml-2">数字をヒントに埋まっている手を予想し、勝てる手でクリックしていきましょう。</div>
-    <div class="ml-2">自分の手は右クリックで変更することができます。</div>
+    <div class="ml-2">数字をヒントに埋まっている手を予想し、勝てる手でタップしていきましょう。</div>
+    <div class="ml-2">自分の手は下のボタンで変更することができます。</div>
     <br>
     <div class="ml-2">すべての手を見つけた時点でゲーム終了。勝敗と残り時間等からスコアが決まります。</div>
     <div class="flex flex-col justify-between">
